@@ -126,7 +126,81 @@ export default function Home({ episodes }) {
 }
 
 export async function getStaticProps() {
-  let feed = await parse('https://their-side-feed.vercel.app/api/feed')
+  // static representation of the feed
+  const feed = {
+    title: 'Their Side',
+    description:
+      'Conversations with the most tragically misunderstood people of our time.',
+    link: 'undefined',
+    image: '',
+    category: [],
+    items: [
+      {
+        id: 4,
+        title: 'Shooter McGavin',
+        description:
+          'When golf-obsessed terrorists kidnapped his family and held them hostage in exchange for a Golden Jacket, Shooter had no choice but to win the tour at any cost.',
+        link: undefined,
+        author: undefined,
+        published: 1645056000000,
+        created: 1645056000000,
+        category: [],
+        content:
+          '<h2 id="topics">Topics</h2>\n' +
+          '<ul>\n' +
+          '<li>Quibusdam saepe veritatis unde ea omnis repudiandae neque unde sapiente</li>\n' +
+          '<li>Praesentium velit ratione</li>\n' +
+          '<li>Deserunt ullam sit perspiciatis</li>\n' +
+          '<li>Omnis occaecati tempore numquam delectus iste iste odio</li>\n' +
+          '<li>Est qui consequuntur quis quia quod ipsum consectetur ad aperiam</li>\n' +
+          '<li>Voluptate laborum cum dignissimos esse debitis incidunt tempore</li>\n' +
+          '</ul>\n' +
+          '<h2 id="sponsors">Sponsors</h2>\n' +
+          '<ul>\n' +
+          '<li><a href="#">Initech</a> — Pioneers of the TPS report, Initech is actively looking for job-seekers with people skills who can work with customers to gather specifications and deliver them to the software people.</li>\n' +
+          '<li><a href="#">Globex Corporation</a> — Just a friendly and innocent high-tech company, with a casual work environment and an office without walls. Anything you’ve heard about a “doomsday device” is pure conjecture and not based in fact.</li>\n' +
+          '</ul>\n' +
+          '<h2 id="links">Links</h2>\n' +
+          '<ul>\n' +
+          '<li><a href="#">Quis laboriosam</a> molestiae tempore necessitatibus</li>\n' +
+          '<li><a href="#">Sit autem</a> neque minima itaque sit commodi</li>\n' +
+          '<li>Eos ratione <a href="#">blanditiis</a></li>\n' +
+          '<li>Eius a <a href="#">qui quasi</a></li>\n' +
+          '<li>Laborum laudantium sunt <a href="#">mollitia aliquam</a> corporis</li>\n' +
+          '</ul>\n',
+        enclosures: [
+          {
+            url: 'https://www.podtrac.com/pts/redirect.mp3/traffic.libsyn.com/secure/theirside/TheirSide-004-ShooterMcGavin.mp3',
+            type: 'audio/mpeg',
+          },
+        ],
+        content_encoded:
+          '<h2 id="topics">Topics</h2>\n' +
+          '<ul>\n' +
+          '<li>Quibusdam saepe veritatis unde ea omnis repudiandae neque unde sapiente</li>\n' +
+          '<li>Praesentium velit ratione</li>\n' +
+          '<li>Deserunt ullam sit perspiciatis</li>\n' +
+          '<li>Omnis occaecati tempore numquam delectus iste iste odio</li>\n' +
+          '<li>Est qui consequuntur quis quia quod ipsum consectetur ad aperiam</li>\n' +
+          '<li>Voluptate laborum cum dignissimos esse debitis incidunt tempore</li>\n' +
+          '</ul>\n' +
+          '<h2 id="sponsors">Sponsors</h2>\n' +
+          '<ul>\n' +
+          '<li><a href="#">Initech</a> — Pioneers of the TPS report, Initech is actively looking for job-seekers with people skills who can work with customers to gather specifications and deliver them to the software people.</li>\n' +
+          '<li><a href="#">Globex Corporation</a> — Just a friendly and innocent high-tech company, with a casual work environment and an office without walls. Anything you’ve heard about a “doomsday device” is pure conjecture and not based in fact.</li>\n' +
+          '</ul>\n' +
+          '<h2 id="links">Links</h2>\n' +
+          '<ul>\n' +
+          '<li><a href="#">Quis laboriosam</a> molestiae tempore necessitatibus</li>\n' +
+          '<li><a href="#">Sit autem</a> neque minima itaque sit commodi</li>\n' +
+          '<li>Eos ratione <a href="#">blanditiis</a></li>\n' +
+          '<li>Eius a <a href="#">qui quasi</a></li>\n' +
+          '<li>Laborum laudantium sunt <a href="#">mollitia aliquam</a> corporis</li>\n' +
+          '</ul>\n',
+        media: {},
+      },
+    ],
+  }
 
   return {
     props: {
