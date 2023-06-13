@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { parse } from 'rss-to-json'
+import { Navbar } from '@/components/Navbar'
 
 import { useAudioPlayer } from '@/components/AudioProvider'
 import { Container } from '@/components/Container'
@@ -44,6 +45,7 @@ function EpisodeEntry({ episode }) {
       aria-labelledby={`episode-${episode.id}-title`}
       className="py-10 sm:py-12"
     >
+      <Navbar />
       <Container>
         <div className="flex flex-col items-start">
           <h2
